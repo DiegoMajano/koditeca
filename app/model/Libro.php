@@ -1,7 +1,7 @@
 <?php
 
-require_once './Interfaces/ILibro.php';
-require_once './Usuario.php';
+require_once(__DIR__ . '/Interfaces/ILibro.php');
+require_once(__DIR__ . '/Usuario.php');
 
 class Libro implements ILibro
 {
@@ -11,7 +11,7 @@ class Libro implements ILibro
     private int $anioPublicacion;
     private bool $disponible;
     private string $categoria;
-    private Usuario $usuarioPrestamo;
+    private ?Usuario $usuarioPrestamo = null;
 
     // Constructor
     public function __construct(
@@ -109,7 +109,22 @@ class Libro implements ILibro
             "anioPublicacion" => $this->anioPublicacion,
             "disponible" => $this->disponible,
             "categoria" => $this->categoria,
-            "prestadoA" => $this->usuarioPrestamo,
+            "prestadoA" => $this->usuarioPrestamo ? $this->usuarioPrestamo->getIdUsuario() : null, // Guardamos el ID del usuario si hay préstamo
         ];
+    }
+
+    // Guardar los libros en un archivo JSON
+    public static function guardarLibros(array $libros): void
+    {
+        file_put_contents(__DIR__ . '/../../data/libros.json', json_encode($libros, JSON_PRETTY_PRINT));
+    }
+
+    // Cargar los libros desde un archivo JSON
+    public static function cargarLibros(): array
+    {
+        if (file_exists(__DIR__ . '/../../data/libros.json')) {
+            return json_decode(file_get_contents(__DIR__ . '/../../data/libros.json'), true);
+        }
+        return [];
     }
 }

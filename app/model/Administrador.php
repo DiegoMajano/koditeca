@@ -1,6 +1,6 @@
 <?php
 
-require_once('./Interfaces/IAdministrador.php');
+require_once(__DIR__ . '/Interfaces/IAdministrador.php');
 
 class Administrador implements IAdministrador {
     private string $nombre;

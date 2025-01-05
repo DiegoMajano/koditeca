@@ -1,0 +1,21 @@
+[
+    {
+      "titulo": "El Quijote",
+      "autor": "Miguel de Cervantes",
+      "isbn": "978-3-16-148410-0",
+      "anioPublicacion": 1605,
+      "disponible": true,
+      "categoria": "Literatura",
+      "prestadoA": null
+    },
+    {
+      "titulo": "1984",
+      "autor": "George Orwell",
+      "isbn": "978-0-452-28423-4",
+      "anioPublicacion": 1949,
+      "disponible": false,
+      "categoria": "Ficción",
+      "prestadoA": "Juan Pérez"
+    }
+  ]
+  

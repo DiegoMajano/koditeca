@@ -1,6 +1,6 @@
 <?php
 
-require_once './Interfaces/IAutor.php';
+require_once(__DIR__ . '/Interfaces/IAutor.php');
 require_once 'Libro.php'; 
 
 class Autor implements IAutor

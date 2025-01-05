@@ -1,7 +1,7 @@
 <?php
 
-require_once('./Interfaces/IGestionLibros.php');
-require_once('./Interfaces/IGestionUsuarios.php.php');
+require_once(__DIR__ . '/Interfaces/IGestionLibros.php');
+require_once(__DIR__ . '/Interfaces/IGestionUsuarios.php');
 
 class Biblioteca implements IGestionLibros, IGestionUsuarios {
     private $librosDisponibles = [];

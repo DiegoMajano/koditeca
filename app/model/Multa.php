@@ -1,4 +1,8 @@
 <?php
+
+require_once(__DIR__ . '/Interfaces/IMulta.php');
+
+
 class Multa implements IMulta {
     private $fechaRetiro;
     private $fechaDevolucion;

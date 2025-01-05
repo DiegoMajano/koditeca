@@ -42,6 +42,29 @@ class Transaccion
         return $this->fecha;
     }
 
+    public function toArray(): array
+    {
+        return [
+            "usuario" => $this->usuario->getIdUsuario(),
+            "libro" => $this->libro->getIsbn(),
+            "tipoTransaccion" => $this->tipoTransaccion->value,
+            "fecha" => $this->fecha->format('Y-m-d H:i:s'),
+        ];
+    }
+
+    public static function guardarTransacciones(array $transacciones): void
+    {
+        file_put_contents('transacciones.json', json_encode($transacciones, JSON_PRETTY_PRINT));
+    }
+
+    public static function cargarTransacciones(): array
+    {
+        if (file_exists('transacciones.json')) {
+            return json_decode(file_get_contents('transacciones.json'), true);
+        }
+        return [];
+    }
+
     // Método realizarTransaccion
     public function realizarTransaccion(): bool
     {

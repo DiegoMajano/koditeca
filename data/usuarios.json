@@ -1,0 +1,20 @@
+[
+  {
+    "idUsuario": 1,
+    "nombre": "Juan Pérez",
+    "usuario": "juanperez",
+    "clave": "123456",
+    "estado": "Activo",
+    "rol": "admin", 
+    "librosPrestados": []
+  },
+  {
+    "idUsuario": 2,
+    "nombre": "Ana Gómez",
+    "usuario": "anagomez",
+    "clave": "prueba123",
+    "estado": "Inactivo",
+    "rol": "usuario", 
+    "librosPrestados": []
+  }
+]

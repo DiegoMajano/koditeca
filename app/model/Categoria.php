@@ -1,6 +1,6 @@
 <?php
 
-require_once('./Interfaces/ICategoria.php');
+require_once(__DIR__ . '/Interfaces/ICategoria.php');
 
 class Categoria implements ICategoria {
     private string $nombre;
